@@ -1,6 +1,8 @@
+using FileUpload.ApplicationDbContextModel;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,6 +27,13 @@ namespace FileUpload
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            #region DATABASE CONNECTION STRING
+            services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
+
+            //SQLHelper.ConnectionString = Configuration.GetConnectionString("ConnectionString");
+            #endregion
 
             //services.AddRazorPages();
 
