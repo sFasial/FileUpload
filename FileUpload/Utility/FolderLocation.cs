@@ -9,5 +9,8 @@ namespace FileUpload.Utility
     {
         //public const string EN_US = @"\wwwroot\Content\en_US.json";
         public const string EN_US = @"\wwwroot\en_US.json";
+        //public const string ExcelUpload = @"C\API";
+        public const string ExcelUpload = @"C\API\YoutubeDemo.xlsx";
+
     }
 }
